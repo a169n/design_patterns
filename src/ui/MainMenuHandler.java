@@ -32,6 +32,7 @@ public class MainMenuHandler {
                     signalMenuHandler.handleSignalMenu(scanner);
                     break;
                 case 2:
+                    alienMenuHandler.handleAlienMenu(scanner);
                     break;
                 case 3:
                     break;
