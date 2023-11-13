@@ -124,7 +124,8 @@ public class AlienMenuHandler {
 
         if (alienNumber >= 1 && alienNumber <= system.getAliens().size()) {
             Alien selectedAlien = system.getAliens().get(alienNumber - 1);
-            String signalData = "Alien Signal from " + selectedAlien.getName();
+            System.out.print("Enter signal data: ");
+            String signalData = "Alien signal from " + selectedAlien.getName() + ": " + scanner.nextLine();
             system.receiveSignal(new Signal(signalData));
             System.out.println("Signal received from " + selectedAlien.getName());
         } else {

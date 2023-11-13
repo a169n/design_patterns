@@ -2,12 +2,15 @@ package ui;
 
 import decorator.NoiseFilteringDecorator;
 import decorator.VisualizationDecorator;
+import entities.Alien;
 import entities.Signal;
 import singleton.AlienDetectionSystem;
 import strategy.FourierMethod;
 import strategy.ISignalAnalysisStrategy;
 import strategy.SpectralAnalysis;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SignalMenuHandler {
@@ -18,6 +21,7 @@ public class SignalMenuHandler {
     }
 
     public void handleSignalMenu(Scanner scanner) {
+        Alien selectedAlien = null;
         while (true) {
             System.out.println("Signal Menu:");
             System.out.println("1. Receive Signal");
