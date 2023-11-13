@@ -4,7 +4,7 @@ import entities.Signal;
 import strategy.ISignalAnalysisStrategy;
 
 public class SignalAnalysisDecorator implements ISignalAnalysisStrategy {
-    private ISignalAnalysisStrategy strategy;
+    private final ISignalAnalysisStrategy strategy;
     public SignalAnalysisDecorator(ISignalAnalysisStrategy strategy) {
         this.strategy = strategy;
     }

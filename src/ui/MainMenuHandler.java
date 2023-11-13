@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class MainMenuHandler {
 
-    private SignalMenuHandler signalMenuHandler;
-    private AlienMenuHandler alienMenuHandler;
-    private ScientistMenuHandler scientistMenuHandler;
+    private final SignalMenuHandler signalMenuHandler;
+    private final AlienMenuHandler alienMenuHandler;
+    private final ScientistMenuHandler scientistMenuHandler;
     public MainMenuHandler(AlienDetectionSystem system) {
 
         this.signalMenuHandler = new SignalMenuHandler(system);

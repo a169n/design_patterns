@@ -1,10 +1,8 @@
 package adapter;
 
 public class AlienSignalAdapter implements ISignalReceiver{
-    private RadarSignalReceiver radarSignalReceiver;
 
-    public AlienSignalAdapter(RadarSignalReceiver radarSignalReceiver) {
-        this.radarSignalReceiver = radarSignalReceiver;
+    public AlienSignalAdapter(RadarSignalReceiver ignoredRadarSignalReceiver) {
     }
 
     @Override

@@ -2,26 +2,21 @@ package ui;
 
 import decorator.NoiseFilteringDecorator;
 import decorator.VisualizationDecorator;
-import entities.Alien;
 import entities.Signal;
 import singleton.AlienDetectionSystem;
 import strategy.FourierMethod;
 import strategy.ISignalAnalysisStrategy;
 import strategy.SpectralAnalysis;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class SignalMenuHandler {
-    private AlienDetectionSystem system;
+    private final AlienDetectionSystem system;
 
     public SignalMenuHandler(AlienDetectionSystem system) {
         this.system = system;
     }
 
     public void handleSignalMenu(Scanner scanner) {
-        Alien selectedAlien = null;
         while (true) {
             System.out.println("Signal Menu:");
             System.out.println("1. Receive Signal");
@@ -52,10 +47,7 @@ public class SignalMenuHandler {
                     removeSignal(system, scanner);
                     break;
                 case 4:
-                    System.out.println("All Signals:");
-                    for (int i = 0; i < system.getSignals().size(); i++) {
-                        System.out.println((i + 1) + ". " + system.getSignals().get(i).getData());
-                    }
+                    showAllSignals();
                     break;
                 case 5:
                     system.clearAllSignals();
@@ -66,6 +58,13 @@ public class SignalMenuHandler {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
+        }
+    }
+
+    private void showAllSignals() {
+        System.out.println("All Signals:");
+        for (int i = 0; i < system.getSignals().size(); i++) {
+            System.out.println((i + 1) + ". " + system.getSignals().get(i).getData());
         }
     }
 
@@ -87,20 +86,16 @@ public class SignalMenuHandler {
             int strategyChoice = scanner.nextInt();
             scanner.nextLine();
 
-            ISignalAnalysisStrategy analysisStrategy = null;
-            switch (strategyChoice) {
-                case 1:
-                    analysisStrategy = new FourierMethod();
-                    break;
-                case 2:
-                    analysisStrategy = new SpectralAnalysis();
-                    break;
-                default:
+            ISignalAnalysisStrategy analysisStrategy = switch (strategyChoice) {
+                case 1 -> new FourierMethod();
+                case 2 -> new SpectralAnalysis();
+                default -> {
                     System.out.println("Invalid strategy choice. Using default strategy (Fourier Method).");
-                    analysisStrategy = new FourierMethod();
-            }
+                    yield new FourierMethod();
+                }
+            };
 
-            analysisStrategy = addDecorators(system, scanner, analysisStrategy);
+            analysisStrategy = addDecorators(scanner, analysisStrategy);
             analysisStrategy.analyzeSignal(selectedSignal);
         } else {
             System.out.println("Invalid signal selection. Please try again.");
@@ -125,7 +120,7 @@ public class SignalMenuHandler {
         }
     }
 
-    private static ISignalAnalysisStrategy addDecorators(AlienDetectionSystem system, Scanner scanner, ISignalAnalysisStrategy strategy) {
+    private static ISignalAnalysisStrategy addDecorators(Scanner scanner, ISignalAnalysisStrategy strategy) {
         int decoratorCount = 0;
         while (decoratorCount < 2) {
             System.out.println("Choose a decorator pattern:");

@@ -1,7 +1,7 @@
 package entities;
 
 public class Signal {
-    private String data;
+    private final String data;
 
     public Signal(String data) {
         this.data = data;

@@ -3,7 +3,7 @@ package observer;
 import entities.Signal;
 
 public class Scientist implements IAlienSignalObserver{
-    private String name;
+    private final String name;
     public Scientist(String name) {
         this.name = name;
     }

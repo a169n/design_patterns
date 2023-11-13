@@ -7,7 +7,7 @@ import singleton.AlienDetectionSystem;
 import java.util.Scanner;
 
 public class ScientistMenuHandler {
-    private AlienDetectionSystem system;
+    private final AlienDetectionSystem system;
 
     public ScientistMenuHandler(AlienDetectionSystem system) {
         this.system = system;
@@ -28,7 +28,7 @@ public class ScientistMenuHandler {
 
             switch (scientistChoice) {
                 case 1:
-                    System.out.println("Enter scientist name: ");
+                    System.out.print("Enter scientist name: ");
                     String scientistName = scanner.nextLine();
                     Scientist scientist = new Scientist(scientistName);
                     system.getNotifier().addObserver(scientist);

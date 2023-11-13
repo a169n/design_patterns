@@ -1,7 +1,5 @@
 package singleton;
 
-import adapter.AlienSignalAdapter;
-import adapter.ISignalReceiver;
 import entities.Alien;
 import entities.Signal;
 import observer.AlienSignalNotifier;
@@ -11,16 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlienDetectionSystem {
-    private List<Signal> signals;
-    private List<Alien> aliens;
-    private AlienSignalNotifier notifier;
-    private ISignalReceiver signalReceiver;
+    private final List<Signal> signals;
+    private final List<Alien> aliens;
+    private final AlienSignalNotifier notifier;
 
-    public AlienDetectionSystem(AlienSignalAdapter signalReceiver) {
+
+    public AlienDetectionSystem() {
         signals = new ArrayList<>();
         aliens = new ArrayList<>();
         notifier = new AlienSignalNotifier();
-        this.signalReceiver = signalReceiver;
+
     }
 
     public List<Signal> getSignals() {
@@ -55,7 +53,4 @@ public class AlienDetectionSystem {
         aliens.clear();
     }
 
-    public ISignalReceiver getSignalReceiver() {
-        return signalReceiver;
-    }
 }

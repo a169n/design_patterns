@@ -1,8 +1,8 @@
 package entities;
 
 public class Alien {
-    private String name;
-    private String type;
+    private final String name;
+    private final String type;
 
     public Alien(String name, String type) {
         this.name = name;

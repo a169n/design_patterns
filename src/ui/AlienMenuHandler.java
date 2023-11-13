@@ -8,7 +8,7 @@ import singleton.AlienDetectionSystem;
 import java.util.Scanner;
 
 public class AlienMenuHandler {
-    private AlienDetectionSystem system;
+    private final AlienDetectionSystem system;
 
     public AlienMenuHandler(AlienDetectionSystem system) {
         this.system = system;
