@@ -79,4 +79,5 @@ The Alien Detection System, with its adaptable design patterns, finds applicatio
    - Referenced for implementing the OpenAI API in the Signal Analysis process.
 
 ### UML Diagram
+![UML Diagram](sdp_UML_diagram.png)
 
