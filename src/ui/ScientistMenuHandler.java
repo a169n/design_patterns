@@ -18,8 +18,9 @@ public class ScientistMenuHandler {
             System.out.println("Scientist Menu:");
             System.out.println("1. Add Scientist");
             System.out.println("2. Remove Scientist");
-            System.out.println("3. Clear all Scientists");
-            System.out.println("4. Back to Main Menu");
+            System.out.println("3. Show all Scientists");
+            System.out.println("4. Clear all Scientists");
+            System.out.println("5. Back to Main Menu");
             System.out.print("Enter your choice:" );
 
             int scientistChoice = scanner.nextInt();
@@ -37,10 +38,13 @@ public class ScientistMenuHandler {
                     removeScientist(system, scanner);
                     break;
                 case 3:
+                    showAllScientists();
+                    break;
+                case 4:
                     system.getNotifier().getObservers().clear();
                     System.out.println("All scientists have been cleared");
                     break;
-                case 4:
+                case 5:
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -66,4 +70,10 @@ public class ScientistMenuHandler {
         }
     }
 
+    private void showAllScientists() {
+        System.out.println("All Scientists:");
+        for (int i = 0; i < system.getNotifier().getObservers().size(); i++) {
+            System.out.println((i + 1) + ". " + system.getNotifier().getObservers().get(i));
+        }
+    }
 }

@@ -20,11 +20,12 @@ public class SignalMenuHandler {
     public void handleSignalMenu(Scanner scanner) {
         while (true) {
             System.out.println("Signal Menu:");
-            System.out.println("1. Receive Signal:");
-            System.out.println("2. Analyze Signal:");
-            System.out.println("3. Show all Signals");
-            System.out.println("4. Clear all Signals");
-            System.out.println("5. Back to Main menu");
+            System.out.println("1. Receive Signal");
+            System.out.println("2. Analyze Signal");
+            System.out.println("3. Remove Signal");
+            System.out.println("4. Show all Signals");
+            System.out.println("5. Clear all Signals");
+            System.out.println("6. Back to Main menu");
             System.out.print("Enter your choice: ");
 
             int signalChoice = scanner.nextInt();
@@ -44,16 +45,19 @@ public class SignalMenuHandler {
                     }
                     break;
                 case 3:
+                    removeSignal(system, scanner);
+                    break;
+                case 4:
                     System.out.println("All Signals:");
                     for (int i = 0; i < system.getSignals().size(); i++) {
                         System.out.println((i + 1) + ". " + system.getSignals().get(i).getData());
                     }
                     break;
-                case 4:
+                case 5:
                     system.clearAllSignals();
                     System.out.println("All signals have been cleared.");
                     break;
-                case 5:
+                case 6:
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -94,6 +98,24 @@ public class SignalMenuHandler {
 
             analysisStrategy = addDecorators(system, scanner, analysisStrategy);
             analysisStrategy.analyzeSignal(selectedSignal);
+        } else {
+            System.out.println("Invalid signal selection. Please try again.");
+        }
+    }
+
+    public void removeSignal(AlienDetectionSystem system, Scanner scanner) {
+        System.out.println("Choose a Signal to remove:");
+        for (int i = 0; i < system.getSignals().size(); i++) {
+            System.out.println((i + 1) + ". " + system.getSignals().get(i).getData());
+        }
+
+        System.out.print("Enter the number of Signal to remove: ");
+        int signalNumber = scanner.nextInt();
+        scanner.nextLine();
+
+        if (signalNumber >= 1 && signalNumber <= system.getSignals().size()) {
+            Signal removedSignal = system.getSignals().remove(signalNumber - 1);
+            System.out.println("Signal '" + removedSignal + "' has been removed.");
         } else {
             System.out.println("Invalid signal selection. Please try again.");
         }

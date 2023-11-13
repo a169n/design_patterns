@@ -19,9 +19,10 @@ public class AlienMenuHandler {
             System.out.println("Alien menu:");
             System.out.println("1. Create Aliens");
             System.out.println("2. Remove Alien");
-            System.out.println("3. Clear all Aliens");
-            System.out.println("4. Receive Alien Signal");
-            System.out.println("5. Back to Main Menu");
+            System.out.println("3. Show all Aliens");
+            System.out.println("4. Clear all Aliens");
+            System.out.println("5. Receive Alien Signal");
+            System.out.println("6. Back to Main Menu");
             System.out.print("Enter your choice: ");
 
             int alienChoice = scanner.nextInt();
@@ -35,13 +36,16 @@ public class AlienMenuHandler {
                     removeAlien(system, scanner);
                     break;
                 case 3:
+                    showAllAliens();
+                    break;
+                case 4:
                     system.clearAllAliens();
                     System.out.println("All Aliens have been cleared.");
                     break;
-                case 4:
+                case 5:
                     receiveAlienSignal(system, scanner);
                     break;
-                case 5:
+                case 6:
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -76,6 +80,13 @@ public class AlienMenuHandler {
         if (alien != null) {
             system.getAliens().add(alien);
             System.out.println(alien.getName() + " has been created.");
+        }
+    }
+
+    public void showAllAliens() {
+        System.out.println("All Aliens:");
+        for (int i = 0; i < system.getAliens().size(); i++) {
+            System.out.println((i + 1) + ". " + system.getAliens().get(i).getType() + " alien " + system.getAliens().get(i).getName());
         }
     }
 
