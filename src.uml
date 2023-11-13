@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Aibyn/IdeaProjects/sdp_final/src</OriginalElement>
+  <nodes>
+    <node x="802.75" y="1063.0">ui.MainMenuHandler</node>
+    <node x="1013.3454301075269" y="80.5">observer.Scientist</node>
+    <node x="143.24462365591398" y="815.0">ui.SignalMenuHandler</node>
+    <node x="-259.15620437956204" y="1132.0">adapter.RadarSignalReceiver</node>
+    <node x="786.3454301075269" y="815.0">ui.AlienMenuHandler</node>
+    <node x="1419.0712365591396" y="570.0">entities.GreenAlien</node>
+    <node x="303.75" y="576.0">decorator.NoiseFilteringDecorator</node>
+    <node x="1204.345430107527" y="839.0">ui.ScientistMenuHandler</node>
+    <node x="686.875" y="300.0">strategy.FourierMethod</node>
+    <node x="-119.15620437956204" y="1019.0">adapter.ISignalReceiver</node>
+    <node x="1022.9018817204301" y="269.0">entities.Signal</node>
+    <node x="-65.25" y="576.0">decorator.VisualizationDecorator</node>
+    <node x="1130.9462365591398" y="460.5">singleton.AlienDetectionSystem</node>
+    <node x="-243.0" y="300.0">strategy.SpectralAnalysis</node>
+    <node x="-28.15620437956204" y="1132.0">adapter.AlienSignalAdapter</node>
+    <node x="203.2204301075269" y="123.5">strategy.ISignalAnalysisStrategy</node>
+    <node x="1447.2594086021506" y="245.0">entities.Alien</node>
+    <node x="1438.5712365591396" y="715.2861313868613">factory.AlienFactory</node>
+    <node x="1285.125" y="1203.0">ui.Main</node>
+    <node x="992.3454301075269" y="-32.5">observer.IAlienSignalObserver</node>
+    <node x="139.2204301075269" y="300.0">decorator.SignalAnalysisDecorator</node>
+    <node x="1180.90188172043" y="244.5">observer.AlienSignalNotifier</node>
+    <node x="1607.0712365591396" y="570.0">entities.RedAlien</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ui.SignalMenuHandler" target="singleton.AlienDetectionSystem" relationship="TO_ONE">
+      <point x="3.763440860211631E-4" y="-92.0" />
+      <point x="395.745" y="779.0" />
+      <point x="1242.446" y="779.0" />
+      <point x="-2.365591399211553E-4" y="141.0" />
+    </edge>
+    <edge source="ui.ScientistMenuHandler" target="singleton.AlienDetectionSystem" relationship="TO_ONE">
+      <point x="-4.3010752688132925E-4" y="-68.0" />
+      <point x="1396.845" y="779.0" />
+      <point x="1242.446" y="779.0" />
+      <point x="-2.365591399211553E-4" y="141.0" />
+    </edge>
+    <edge source="decorator.VisualizationDecorator" target="decorator.SignalAnalysisDecorator" relationship="GENERALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="109.25" y="482.0" />
+      <point x="319.22" y="482.0" />
+      <point x="-4.3010752688132925E-4" y="44.0" />
+    </edge>
+    <edge source="ui.Main" target="singleton.AlienDetectionSystem" relationship="CREATE">
+      <point x="84.0" y="0.0" />
+      <point x="1793.5712365591396" y="1247.0" />
+      <point x="1793.5712365591396" y="650.5" />
+      <point x="111.5" y="49.0" />
+    </edge>
+    <edge source="ui.MainMenuHandler" target="ui.AlienMenuHandler" relationship="TO_ONE">
+      <point x="42.09543010752691" y="-44.0" />
+      <point x="15.0" y="92.0" />
+    </edge>
+    <edge source="observer.Scientist" target="observer.IAlienSignalObserver" relationship="REALIZATION">
+      <point x="0.0" y="-56.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="ui.SignalMenuHandler" target="strategy.SpectralAnalysis" relationship="CREATE">
+      <point x="-252.5" y="0.0" />
+      <point x="-136.65620437956204" y="907.0" />
+      <point x="-0.15620437956204114" y="44.0" />
+    </edge>
+    <edge source="ui.SignalMenuHandler" target="decorator.VisualizationDecorator" relationship="CREATE">
+      <point x="-245.0" y="-92.0" />
+      <point x="41.49462365591398" y="44.0" />
+    </edge>
+    <edge source="ui.SignalMenuHandler" target="entities.Signal" relationship="CREATE">
+      <point x="-14.999623655913979" y="-92.0" />
+      <point x="380.745" y="797.0" />
+      <point x="1091.902" y="797.0" />
+      <point x="1.1827956996057765E-4" y="56.5" />
+    </edge>
+    <edge source="ui.MainMenuHandler" target="ui.ScientistMenuHandler" relationship="CREATE">
+      <point x="155.5" y="0.0" />
+      <point x="1396.845430107527" y="1107.0" />
+      <point x="0.0" y="68.0" />
+    </edge>
+    <edge source="strategy.FourierMethod" target="strategy.ISignalAnalysisStrategy" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="793.375" y="244.0" />
+      <point x="319.22" y="244.0" />
+      <point x="-4.3010752688132925E-4" y="31.5" />
+    </edge>
+    <edge source="entities.RedAlien" target="entities.Alien" relationship="GENERALIZATION">
+      <point x="-2.3655913969378162E-4" y="-31.5" />
+      <point x="1684.071" y="489.0" />
+      <point x="1535.259" y="489.0" />
+      <point x="-4.0860215062821226E-4" y="80.5" />
+    </edge>
+    <edge source="decorator.SignalAnalysisDecorator" target="strategy.ISignalAnalysisStrategy" relationship="REALIZATION">
+      <point x="-4.3010752688132925E-4" y="-44.0" />
+      <point x="-4.3010752688132925E-4" y="31.5" />
+    </edge>
+    <edge source="ui.SignalMenuHandler" target="decorator.NoiseFilteringDecorator" relationship="CREATE">
+      <point x="-29.99962365591398" y="-92.0" />
+      <point x="-116.005" y="44.0" />
+    </edge>
+    <edge source="ui.AlienMenuHandler" target="singleton.AlienDetectionSystem" relationship="TO_ONE">
+      <point x="-4.3010752688132925E-4" y="-92.0" />
+      <point x="985.345" y="779.0" />
+      <point x="1242.446" y="779.0" />
+      <point x="-2.365591399211553E-4" y="141.0" />
+    </edge>
+    <edge source="decorator.SignalAnalysisDecorator" target="strategy.ISignalAnalysisStrategy" relationship="TO_ONE">
+      <point x="14.999569892473119" y="-44.0" />
+      <point x="14.999569892473119" y="31.5" />
+    </edge>
+    <edge source="singleton.AlienDetectionSystem" target="entities.Signal" relationship="TO_MANY">
+      <point x="-104.0" y="-141.0" />
+      <point x="46.54435483870975" y="56.5" />
+    </edge>
+    <edge source="singleton.AlienDetectionSystem" target="observer.AlienSignalNotifier" relationship="CREATE">
+      <point x="64.95564516129025" y="-141.0" />
+      <point x="15.0" y="81.0" />
+    </edge>
+    <edge source="entities.GreenAlien" target="entities.Alien" relationship="GENERALIZATION">
+      <point x="-2.3655913969378162E-4" y="-31.5" />
+      <point x="1503.071" y="489.0" />
+      <point x="1535.259" y="489.0" />
+      <point x="-4.0860215062821226E-4" y="80.5" />
+    </edge>
+    <edge source="adapter.RadarSignalReceiver" target="adapter.ISignalReceiver" relationship="REALIZATION">
+      <point x="2.0437956203522845E-4" y="-44.0" />
+      <point x="-153.656" y="1107.0" />
+      <point x="-14.655999999999999" y="1107.0" />
+      <point x="2.0437956204233387E-4" y="31.5" />
+    </edge>
+    <edge source="ui.ScientistMenuHandler" target="observer.Scientist" relationship="CREATE">
+      <point x="192.5" y="0.0" />
+      <point x="1778.5712365591396" y="907.0" />
+      <point x="1778.5712365591396" y="121.5" />
+      <point x="85.5" y="-15.0" />
+    </edge>
+    <edge source="ui.MainMenuHandler" target="ui.SignalMenuHandler" relationship="CREATE">
+      <point x="-155.5" y="0.0" />
+      <point x="395.744623655914" y="1107.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="strategy.SpectralAnalysis" target="strategy.ISignalAnalysisStrategy" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="-136.5" y="244.0" />
+      <point x="319.22" y="244.0" />
+      <point x="-4.3010752688132925E-4" y="31.5" />
+    </edge>
+    <edge source="ui.Main" target="ui.MainMenuHandler" relationship="CREATE">
+      <point x="-84.0" y="0.0" />
+      <point x="958.25" y="1247.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="observer.AlienSignalNotifier" target="observer.Scientist" relationship="TO_MANY">
+      <point x="0.0" y="-81.0" />
+      <point x="1292.40188172043" y="136.5" />
+      <point x="85.5" y="0.0" />
+    </edge>
+    <edge source="factory.AlienFactory" target="entities.RedAlien" relationship="CREATE">
+      <point x="119.0" y="-44.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="adapter.AlienSignalAdapter" target="adapter.ISignalReceiver" relationship="REALIZATION">
+      <point x="2.0437956203522845E-4" y="-44.0" />
+      <point x="124.344" y="1107.0" />
+      <point x="-14.655999999999999" y="1107.0" />
+      <point x="2.0437956204233387E-4" y="31.5" />
+    </edge>
+    <edge source="ui.AlienMenuHandler" target="entities.Signal" relationship="CREATE">
+      <point x="14.999569892473119" y="-92.0" />
+      <point x="1000.345" y="797.0" />
+      <point x="1091.902" y="797.0" />
+      <point x="1.1827956996057765E-4" y="56.5" />
+    </edge>
+    <edge source="singleton.AlienDetectionSystem" target="observer.AlienSignalNotifier" relationship="TO_ONE">
+      <point x="49.95564516129025" y="-141.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="singleton.AlienDetectionSystem" target="entities.Alien" relationship="TO_MANY">
+      <point x="111.5" y="-112.5" />
+      <point x="1488.071" y="489.0" />
+      <point x="-47.18840860215073" y="80.5" />
+    </edge>
+    <edge source="decorator.NoiseFilteringDecorator" target="decorator.SignalAnalysisDecorator" relationship="GENERALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="481.75" y="482.0" />
+      <point x="319.22" y="482.0" />
+      <point x="-4.3010752688132925E-4" y="44.0" />
+    </edge>
+    <edge source="ui.MainMenuHandler" target="ui.AlienMenuHandler" relationship="CREATE">
+      <point x="27.09543010752691" y="-44.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="factory.AlienFactory" target="entities.GreenAlien" relationship="CREATE">
+      <point x="-62.0" y="-44.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="ui.SignalMenuHandler" target="strategy.FourierMethod" relationship="CREATE">
+      <point x="252.5" y="0.0" />
+      <point x="768.8454301075269" y="907.0" />
+      <point x="-24.52956989247309" y="44.0" />
+    </edge>
+    <edge source="ui.MainMenuHandler" target="ui.SignalMenuHandler" relationship="TO_ONE">
+      <point x="-155.5" y="-32.5" />
+      <point x="410.744623655914" y="1074.5" />
+      <point x="15.0" y="92.0" />
+    </edge>
+    <edge source="ui.MainMenuHandler" target="ui.ScientistMenuHandler" relationship="TO_ONE">
+      <point x="155.5" y="15.0" />
+      <point x="1411.845430107527" y="1122.0" />
+      <point x="15.0" y="68.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5096726190476191" showDependencies="true" x="777.0" y="639.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
