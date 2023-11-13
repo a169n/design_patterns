@@ -35,6 +35,7 @@ public class MainMenuHandler {
                     alienMenuHandler.handleAlienMenu(scanner);
                     break;
                 case 3:
+                    scientistMenuHandler.handleScientist(scanner);
                     break;
                 case 4:
                     System.out.println("Exiting Alien Detection System...");

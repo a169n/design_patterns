@@ -20,11 +20,11 @@ public class SignalMenuHandler {
     public void handleSignalMenu(Scanner scanner) {
         while (true) {
             System.out.println("Signal Menu:");
-            System.out.println("Receive Signal:");
-            System.out.println("Analyze Signal:");
-            System.out.println("Show all Signals");
-            System.out.println("Clear all Signals");
-            System.out.println("Back to Main menu");
+            System.out.println("1. Receive Signal:");
+            System.out.println("2. Analyze Signal:");
+            System.out.println("3. Show all Signals");
+            System.out.println("4. Clear all Signals");
+            System.out.println("5. Back to Main menu");
             System.out.print("Enter your choice: ");
 
             int signalChoice = scanner.nextInt();
@@ -32,7 +32,7 @@ public class SignalMenuHandler {
 
             switch (signalChoice) {
                 case 1:
-                    System.out.println("Enter Signal data: ");
+                    System.out.print("Enter Signal data: ");
                     String signalData = scanner.nextLine();
                     system.receiveSignal(new Signal(signalData));
                     break;
@@ -102,11 +102,11 @@ public class SignalMenuHandler {
     private static ISignalAnalysisStrategy addDecorators(AlienDetectionSystem system, Scanner scanner, ISignalAnalysisStrategy strategy) {
         int decoratorCount = 0;
         while (decoratorCount < 2) {
-            System.out.println("Choose a decorator:");
+            System.out.println("Choose a decorator pattern:");
             System.out.println("1. Noise Filter");
             System.out.println("2. Visualization");
             System.out.println("3. Apply both Decorators");
-            System.out.println("3. Finish Decorating");
+            System.out.println("4. Finish Decorating");
             System.out.print("Enter your choice: ");
 
             int decoratorChoice = scanner.nextInt();
@@ -132,5 +132,4 @@ public class SignalMenuHandler {
         }
         return strategy;
     }
-
 }
