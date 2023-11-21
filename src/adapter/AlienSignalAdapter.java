@@ -1,12 +1,21 @@
 package adapter;
 
-public class AlienSignalAdapter implements ISignalReceiver{
+import observer.AlienSignalNotifier;
 
-    public AlienSignalAdapter(RadarSignalReceiver ignoredRadarSignalReceiver) {
+public class AlienSignalAdapter implements ISignalReceiver{
+    private final RadarSignalReceiver radarSignalReceiver;
+    private final AlienSignalNotifier  alienSignalNotifier;
+
+    public AlienSignalAdapter(RadarSignalReceiver radarSignalReceiver, AlienSignalNotifier alienSignalNotifier) {
+        this.radarSignalReceiver = radarSignalReceiver;
+        this.alienSignalNotifier = alienSignalNotifier;
     }
 
     @Override
     public void receiveSignal(String signalData) {
-        System.out.println("Adapting radar signal for alien detection: " + signalData);
+        radarSignalReceiver.receiveSignal("Adapted: " + signalData);
+        alienSignalNotifier.notifyObservers(signalData);
+
+
     }
 }

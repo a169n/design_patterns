@@ -1,8 +1,12 @@
 package ui;
 
+import adapter.AlienSignalAdapter;
+import adapter.ISignalReceiver;
+import adapter.RadarSignalReceiver;
 import entities.Alien;
 import entities.Signal;
 import factory.AlienFactory;
+import observer.AlienSignalNotifier;
 import singleton.AlienDetectionSystem;
 
 import java.util.Scanner;
@@ -124,10 +128,17 @@ public class AlienMenuHandler {
 
         if (alienNumber >= 1 && alienNumber <= system.getAliens().size()) {
             Alien selectedAlien = system.getAliens().get(alienNumber - 1);
+
+            AlienSignalNotifier alienSignalNotifier = system.getNotifier();
+            RadarSignalReceiver radarSignalReceiver = new RadarSignalReceiver();
+            AlienSignalAdapter alienSignalAdapter = new AlienSignalAdapter(radarSignalReceiver, alienSignalNotifier);
+
+
             System.out.print("Enter signal data: ");
             String signalData = "Alien signal from " + selectedAlien.getName() + ": " + scanner.nextLine();
-            system.receiveSignal(new Signal(signalData));
-            System.out.println("Signal received from " + selectedAlien.getName());
+
+            alienSignalAdapter.receiveSignal(signalData);
+
         } else {
             System.out.println("Invalid Alien Selection. Please try again.");
         }

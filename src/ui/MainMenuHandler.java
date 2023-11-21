@@ -10,7 +10,6 @@ public class MainMenuHandler {
     private final AlienMenuHandler alienMenuHandler;
     private final ScientistMenuHandler scientistMenuHandler;
     public MainMenuHandler(AlienDetectionSystem system) {
-
         this.signalMenuHandler = new SignalMenuHandler(system);
         this.alienMenuHandler = new AlienMenuHandler(system);
         this.scientistMenuHandler = new ScientistMenuHandler(system);
