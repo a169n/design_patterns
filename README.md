@@ -1,8 +1,83 @@
 # Alien Detection System
 
-## Conclusion
+## Getting Started
 
-The Alien Detection System is a versatile and modular solution designed for managing and analyzing signals from extraterrestrial entities. Employing six key design patterns - Singleton, Strategy, Decorator, Factory, Adapter, and Observer - the project achieves a scalable and maintainable architecture. Each pattern addresses specific concerns, contributing to the system's adaptability and flexibility.
+### Prerequisites
+
+1. Ensure you have Java installed on your system.
+2. Clone the repository to your local machine.
+
+### Running the System
+
+1. Open the project in your preferred Java IDE.
+2. Execute the `Main` class located in the `ui` package to start the Alien Detection System.
+
+### Interacting with the System
+
+1. Follow the on-screen prompts to navigate through the Alien Detection System's menus.
+2. Experiment with creating aliens, receiving signals, and analyzing data.
+
+## Usage
+
+## Usage
+
+The Alien Detection System offers a comprehensive set of features for managing and analyzing signals from extraterrestrial entities. Here's a brief overview of key functionalities:
+
+### Signal Menu
+
+1. **Receive Signal:**
+   - Enter signal data to simulate receiving signals from alien sources.
+
+2. **Analyze Signal:**
+   - Analyze previously received signals using various signal analysis strategies.
+   - Choose from Fourier Method, Spectral Analysis, and apply decorators for Noise Filtering and Visualization.
+
+3. **Remove Signal:**
+   - Remove unwanted signals from the system.
+
+4. **Show all Signals:**
+   - Display a list of all received signals.
+
+5. **Clear all Signals:**
+   - Remove all signals from the system.
+
+### Alien Menu
+
+1. **Create Aliens:**
+   - Enter the name and type (Green or Red) to create new aliens.
+
+2. **Remove Alien:**
+   - Remove unwanted aliens from the system.
+
+3. **Show all Aliens:**
+   - Display a list of all created aliens.
+
+4. **Clear all Aliens:**
+   - Remove all aliens from the system.
+
+5. **Receive Alien Signal:**
+   - Simulate receiving signals from specific aliens.
+
+### Scientist Menu
+
+1. **Add Scientist:**
+   - Enter the scientist's name to add them as an observer to the signal notifier.
+
+2. **Remove Scientist:**
+   - Remove unwanted scientists from the system.
+
+3. **Show all Scientists:**
+   - Display a list of all added scientists.
+
+4. **Clear all Scientists:**
+   - Remove all scientists from the system.
+
+### General Navigation
+
+- Navigate through the menus by entering the corresponding menu numbers.
+- Follow on-screen prompts for each menu option.
+
+Feel free to explore and experiment with different features to fully understand the capabilities of the Alien Detection System.
 
 ### Key Achievements
 
@@ -75,8 +150,11 @@ The Alien Detection System, with its adaptable design patterns, finds applicatio
 3. **Online Resources**
    - Various online tutorials, forums, and articles contributed to solving specific challenges and enhancing understanding.
 
-4. **OpenAI API Documentation**
-   - Referenced for implementing the OpenAI API in the Signal Analysis process.
+
+## Conclusion
+
+The Alien Detection System is a versatile and modular solution designed for managing and analyzing signals from extraterrestrial entities. Employing six key design patterns - Singleton, Strategy, Decorator, Factory, Adapter, and Observer - the project achieves a scalable and maintainable architecture. Each pattern addresses specific concerns, contributing to the system's adaptability and flexibility.
+
 
 ### UML Diagram
 ![UML Diagram](sdp_UML_diagram.png)
