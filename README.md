@@ -19,8 +19,6 @@
 
 ## Usage
 
-## Usage
-
 The Alien Detection System offers a comprehensive set of features for managing and analyzing signals from extraterrestrial entities. Here's a brief overview of key functionalities:
 
 ### Signal Menu
